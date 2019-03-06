@@ -5,24 +5,9 @@
  */
 
 package org.naic.thomason.test;
-import java.lang.reflect.Method;
 import java.util.*;
 
 public class Anagram {
-//    public static void main(String args[]) {
-//        System.out.println();
-//
-//        Scanner input = new Scanner(System.in);
-//        String firstTerm, secondTerm; // Strings to contain the two terms
-//
-//        System.out.println("Enter the first term: ");
-//        firstTerm = input.nextLine();
-//        System.out.println("Enter the second term: ");
-//        secondTerm = input.nextLine();
-//
-//        checkAnagram(firstTerm, secondTerm);
-//    }
-
     /**
      * Compares the two strings to see if they are an Anagram
      * Should only accept 2 errors
