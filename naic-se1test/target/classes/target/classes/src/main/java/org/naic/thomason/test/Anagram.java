@@ -5,34 +5,26 @@
  */
 
 package org.naic.thomason.test;
-import java.lang.reflect.Method;
 import java.util.*;
 
 public class Anagram {
-    public static void main(String args[]) {
-        System.out.println();
-
-        Scanner input = new Scanner(System.in);
-        String firstTerm, secondTerm; // Strings to contain the two terms
-
-        System.out.println("Enter the first term: ");
-        firstTerm = input.nextLine();
-        System.out.println("Enter the second term: ");
-        secondTerm = input.nextLine();
-
-        checkAnagram(firstTerm, secondTerm);
-    }
 
     /**
      * Compares the two strings to see if they are an Anagram
-     *
-     * @param firstTerm  the first string being used in the comparison
-     * @param secondTerm the second string being used in the comparison
+     * Should only accept 2 errors
      */
-    public static void checkAnagram(String firstTerm, String secondTerm) {
+    public static void main(String... args) {
+        // Checks to make sure there is a valid amount of arguments
+        if (args.length > 2) {
+            throw new IllegalArgumentException("There only needs to be 2 parameters");
+        } else if (args.length < 2) {
+            throw new IllegalArgumentException("There must be 2 arguments");
+        }
+
         // Splits the Strings into arrays to compare easier
-        String firstTermArray[] = firstTerm.split("");
-        String secondTermArray[] = secondTerm.split("");
+        String firstTermArray[] = args[0].split("");
+        String secondTermArray[] = args[1].split("");
+
 
         ArrayList<String> firstList = new ArrayList<String>();
         ArrayList<String> secondList = new ArrayList<String>();
@@ -60,15 +52,4 @@ public class Anagram {
             System.out.println("false");
         }
     }
-
-
-    public static void checkArgumentCount(Method method) {
-        if (method.getParameterCount() > 2) {
-            throw new IllegalArgumentException("There only needs to be two arguments. ");
-        } else if ((method.getParameterCount()) < 2) {
-            throw new IllegalArgumentException(("There must be two arguments"));
-        }
-        System.out.println("Executing");
-    }
-
 }
